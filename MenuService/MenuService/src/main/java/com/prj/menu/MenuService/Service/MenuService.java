@@ -8,4 +8,6 @@ public interface MenuService {
     Item addItem(Item item);
     List<Item> getAllItems();
     Item getItem(Long itemId);
+    Item updateItem(Item item);
+    void deleteItem(Long itemId);
 }

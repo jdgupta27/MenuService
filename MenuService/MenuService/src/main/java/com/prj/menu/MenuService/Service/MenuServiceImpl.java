@@ -26,4 +26,17 @@ public class MenuServiceImpl implements MenuService{
     public Item getItem(Long itemId) {
         return menuRepository.findById(itemId).get();
     }
+
+    @Override
+    public Item updateItem(Item item) {
+        Item item1 = menuRepository.findById(item.getItemId()).get();
+        item1.setAvailable(item.getAvailable());
+        item1.setPrice(item.getPrice());
+        return item1;
+    }
+
+    @Override
+    public void deleteItem(Long itemId) {
+        menuRepository.deleteById(itemId);
+    }
 }
