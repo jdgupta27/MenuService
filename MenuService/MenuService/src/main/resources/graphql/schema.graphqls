@@ -1,0 +1,19 @@
+type Item{
+    itemId:ID!,
+    name:String,
+    description:String,
+    price:Float,
+    catagory:String,
+    available:Boolean
+
+}
+type Query{
+    getAllItems:[Item],
+    getItem(itemId:ID!):Item
+}
+
+type Mutation{
+    addItem(name:String,description:String,price:Float,catagory:String,available:Boolean):Item,
+    deleteItem(itemId:ID!):Boolean,
+    updateItem(itemId:ID!,price:Float,available:Boolean):Item
+}
